@@ -318,7 +318,8 @@ if selected == 'Parkison Prediction':
     parkinson_dig = ''
     
     # button
-'''    if st.button("Parkinson test result"):
+'''    
+if st.button("Parkinson test result"):
         parkinson_prediction=[[]]
         # change the parameters according to the model
         parkinson_prediction = parkinson_model.predict([[MDVP, MDVPFIZ, MDVPFLO, MDVPJITTER, MDVPJitterAbs, MDVPRAP, MDVPPPQ, JitterDDP, MDVPShimmer,MDVPShimmer_dB, Shimmer_APQ3, ShimmerAPQ5, MDVP_APQ, ShimmerDDA, NHR, HNR,  RPDE, DFA, spread1, spread2, D2, PPE]])
@@ -331,7 +332,8 @@ if selected == 'Parkison Prediction':
             parkinson_dig = "Congratulation , You don't have Parkinson disease"
             image = Image.open('negative.jpg')
             st.image(image, caption='')
-        st.success(name+' , ' + parkinson_dig) '''
+        st.success(name+' , ' + parkinson_dig) 
+'''
 
 
 
@@ -391,7 +393,8 @@ if selected == 'Lung Cancer Prediction':
     cancer_result = ''
 
     # Button
- '''   if st.button("Predict Lung Cancer"):
+'''
+if st.button("Predict Lung Cancer"):
         # Create a DataFrame with user inputs
         user_data = pd.DataFrame({
             'GENDER': [gender],
@@ -482,7 +485,8 @@ if selected == 'Liver prediction':  # pagetitle
     liver_dig = ''
 
     # button
-   ''' if st.button("Liver test result"):
+'''
+if st.button("Liver test result"):
         liver_prediction=[[]]
         liver_prediction = liver_model.predict([[Sex,age,Total_Bilirubin,Direct_Bilirubin,Alkaline_Phosphotase,Alamine_Aminotransferase,Aspartate_Aminotransferase,Total_Protiens,Albumin,Albumin_and_Globulin_Ratio]])
 
@@ -495,7 +499,8 @@ if selected == 'Liver prediction':  # pagetitle
             image = Image.open('negative.jpg')
             st.image(image, caption='')
             liver_dig = "Congratulation , You don't have liver disease."
-        st.success(name+' , ' + liver_dig) '''
+        st.success(name+' , ' + liver_dig) 
+'''
 
 
 
@@ -547,7 +552,8 @@ if selected == 'Hepatitis prediction':
     hepatitis_result = ''
 
     # Button
- '''   if st.button("Predict Hepatitis"):
+'''
+if st.button("Predict Hepatitis"):
         # Create a DataFrame with user inputs
         user_data = pd.DataFrame({
             'Age': [age],
@@ -576,16 +582,8 @@ if selected == 'Hepatitis prediction':
             image = Image.open('negative.jpg')
             st.image(image, caption='')
 
-        st.success(name + ', ' + hepatitis_result) '''
-
-
-
-
-
-
-
-
-
+        st.success(name + ', ' + hepatitis_result) 
+'''
 
 
 # jaundice prediction page
@@ -627,7 +625,8 @@ if selected == 'Jaundice prediction':  # pagetitle
     jaundice_dig = ''
 
     # button
-  '''  if st.button("Jaundice test result"):
+'''  
+if st.button("Jaundice test result"):
         jaundice_prediction=[[]]
         jaundice_prediction = jaundice_model.predict([[age,Sex,Total_Bilirubin,Direct_Bilirubin,Alkaline_Phosphotase,Alamine_Aminotransferase,Total_Protiens,Albumin]])
 
@@ -640,9 +639,8 @@ if selected == 'Jaundice prediction':  # pagetitle
             image = Image.open('negative.jpg')
             st.image(image, caption='')
             jaundice_dig = "Congratulation , You don't have Jaundice."
-        st.success(name+' , ' + jaundice_dig) '''
-
-
+        st.success(name+' , ' + jaundice_dig) 
+'''
 
 
 from sklearn.preprocessing import LabelEncoder
@@ -728,7 +726,8 @@ if selected == 'Chronic Kidney prediction':
     kidney_result = ''
 
     # Button
-'''    if st.button("Predict Chronic Kidney Disease"):
+'''    
+if st.button("Predict Chronic Kidney Disease"):
         # Create a DataFrame with user inputs
         user_input = pd.DataFrame({
             'age': [age],
@@ -836,7 +835,8 @@ if selected == 'Breast Cancer Prediction':
     breast_cancer_result = ''
 
     # Button
-   ''' if st.button("Predict Breast Cancer"):
+'''
+if st.button("Predict Breast Cancer"):
         # Create a DataFrame with user inputs
         user_input = pd.DataFrame({
             'radius_mean': [radius_mean],
