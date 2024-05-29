@@ -19,30 +19,13 @@ import joblib
 # loading the models
 diabetes_model = joblib.load("models/diabetes_model.sav")
 heart_model = joblib.load("models/heart_disease_model.sav")
-parkinson_model = joblib.load("models/parkinsons_model.sav")
-# Load the lung cancer prediction model
-lung_cancer_model = joblib.load('models/lung_cancer_model.sav')
-
-# Load the pre-trained model
-breast_cancer_model = joblib.load('models/breast_cancer.sav')
-
-# Load the pre-trained model
-chronic_disease_model = joblib.load('models/chronic_model.sav')
-
-# Load the hepatitis prediction model
-hepatitis_model = joblib.load('models/hepititisc_model.sav')
-
-
-liver_model = joblib.load('models/liver_model.sav')# Load the lung cancer prediction model
-lung_cancer_model = joblib.load('models/lung_cancer_model.sav')
-
 
 # sidebar
 with st.sidebar:
     selected = option_menu('Multiple Disease Prediction', [
+         'Heart disease Prediction',
         'Disease Prediction',
         'Diabetes Prediction',
-        'Heart disease Prediction',
         'Parkison Prediction',
         'Liver prediction',
         'Hepatitis prediction',
@@ -335,7 +318,7 @@ if selected == 'Parkison Prediction':
     parkinson_dig = ''
     
     # button
-    if st.button("Parkinson test result"):
+'''    if st.button("Parkinson test result"):
         parkinson_prediction=[[]]
         # change the parameters according to the model
         parkinson_prediction = parkinson_model.predict([[MDVP, MDVPFIZ, MDVPFLO, MDVPJITTER, MDVPJitterAbs, MDVPRAP, MDVPPPQ, JitterDDP, MDVPShimmer,MDVPShimmer_dB, Shimmer_APQ3, ShimmerAPQ5, MDVP_APQ, ShimmerDDA, NHR, HNR,  RPDE, DFA, spread1, spread2, D2, PPE]])
@@ -348,15 +331,15 @@ if selected == 'Parkison Prediction':
             parkinson_dig = "Congratulation , You don't have Parkinson disease"
             image = Image.open('negative.jpg')
             st.image(image, caption='')
-        st.success(name+' , ' + parkinson_dig)
+        st.success(name+' , ' + parkinson_dig) '''
 
 
 
 # Load the dataset
-lung_cancer_data = pd.read_csv('data/lung_cancer.csv')
+#lung_cancer_data = pd.read_csv('data/lung_cancer.csv')
 
 # Convert 'M' to 0 and 'F' to 1 in the 'GENDER' column
-lung_cancer_data['GENDER'] = lung_cancer_data['GENDER'].map({'M': 'Male', 'F': 'Female'})
+#lung_cancer_data['GENDER'] = lung_cancer_data['GENDER'].map({'M': 'Male', 'F': 'Female'})
 
 # Lung Cancer prediction page
 if selected == 'Lung Cancer Prediction':
@@ -408,7 +391,7 @@ if selected == 'Lung Cancer Prediction':
     cancer_result = ''
 
     # Button
-    if st.button("Predict Lung Cancer"):
+ '''   if st.button("Predict Lung Cancer"):
         # Create a DataFrame with user inputs
         user_data = pd.DataFrame({
             'GENDER': [gender],
@@ -452,7 +435,7 @@ if selected == 'Lung Cancer Prediction':
             st.image(image, caption='')
 
         st.success(name + ', ' + cancer_result)
-
+'''
 
 
 
@@ -499,7 +482,7 @@ if selected == 'Liver prediction':  # pagetitle
     liver_dig = ''
 
     # button
-    if st.button("Liver test result"):
+   ''' if st.button("Liver test result"):
         liver_prediction=[[]]
         liver_prediction = liver_model.predict([[Sex,age,Total_Bilirubin,Direct_Bilirubin,Alkaline_Phosphotase,Alamine_Aminotransferase,Aspartate_Aminotransferase,Total_Protiens,Albumin,Albumin_and_Globulin_Ratio]])
 
@@ -512,7 +495,7 @@ if selected == 'Liver prediction':  # pagetitle
             image = Image.open('negative.jpg')
             st.image(image, caption='')
             liver_dig = "Congratulation , You don't have liver disease."
-        st.success(name+' , ' + liver_dig)
+        st.success(name+' , ' + liver_dig) '''
 
 
 
@@ -564,7 +547,7 @@ if selected == 'Hepatitis prediction':
     hepatitis_result = ''
 
     # Button
-    if st.button("Predict Hepatitis"):
+ '''   if st.button("Predict Hepatitis"):
         # Create a DataFrame with user inputs
         user_data = pd.DataFrame({
             'Age': [age],
@@ -593,7 +576,7 @@ if selected == 'Hepatitis prediction':
             image = Image.open('negative.jpg')
             st.image(image, caption='')
 
-        st.success(name + ', ' + hepatitis_result)
+        st.success(name + ', ' + hepatitis_result) '''
 
 
 
@@ -644,7 +627,7 @@ if selected == 'Jaundice prediction':  # pagetitle
     jaundice_dig = ''
 
     # button
-    if st.button("Jaundice test result"):
+  '''  if st.button("Jaundice test result"):
         jaundice_prediction=[[]]
         jaundice_prediction = jaundice_model.predict([[age,Sex,Total_Bilirubin,Direct_Bilirubin,Alkaline_Phosphotase,Alamine_Aminotransferase,Total_Protiens,Albumin]])
 
@@ -657,15 +640,7 @@ if selected == 'Jaundice prediction':  # pagetitle
             image = Image.open('negative.jpg')
             st.image(image, caption='')
             jaundice_dig = "Congratulation , You don't have Jaundice."
-        st.success(name+' , ' + jaundice_dig)
-
-
-
-
-
-
-
-
+        st.success(name+' , ' + jaundice_dig) '''
 
 
 
@@ -753,7 +728,7 @@ if selected == 'Chronic Kidney prediction':
     kidney_result = ''
 
     # Button
-    if st.button("Predict Chronic Kidney Disease"):
+'''    if st.button("Predict Chronic Kidney Disease"):
         # Create a DataFrame with user inputs
         user_input = pd.DataFrame({
             'age': [age],
@@ -795,7 +770,7 @@ if selected == 'Chronic Kidney prediction':
             kidney_prediction_dig = "Congratulation , You don't have kidney disease."
         st.success(name+' , ' + kidney_prediction_dig)
 
-
+'''
 
 # Breast Cancer Prediction Page
 if selected == 'Breast Cancer Prediction':
@@ -861,7 +836,7 @@ if selected == 'Breast Cancer Prediction':
     breast_cancer_result = ''
 
     # Button
-    if st.button("Predict Breast Cancer"):
+   ''' if st.button("Predict Breast Cancer"):
         # Create a DataFrame with user inputs
         user_input = pd.DataFrame({
             'radius_mean': [radius_mean],
@@ -909,3 +884,4 @@ if selected == 'Breast Cancer Prediction':
             breast_cancer_result = "The model predicts that you don't have Breast Cancer."
 
         st.success(breast_cancer_result)
+'''
